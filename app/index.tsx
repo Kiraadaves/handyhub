@@ -36,7 +36,11 @@ const HomePage = () => {
   };
   return (
     <div className="flex flex-col gap-16">
-      <Navbar navItems={navItems} onNavItemClick={handleNavItemClick} />
+      <Navbar
+        navItems={navItems}
+        onNavItemClick={handleNavItemClick}
+        activeTab={activeComponent}
+      />
       <main className="w-[87%] mx-auto flex flex-col gap-20">
         {renderActiveComponent()}
       </main>

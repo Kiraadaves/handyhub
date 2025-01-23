@@ -11,17 +11,12 @@ interface NavItem {
 interface NavProps {
   navItems: NavItem[];
   onNavItemClick: (label: string) => void;
+  activeTab: string;
 }
-const formFields = [
-  { id: "name", label: "Name", type: "text" },
-  { id: "email", label: "Email", type: "email" },
-  { id: "message", label: "Message", type: "textarea" },
-];
 
-const Navbar = ({ navItems, onNavItemClick }: NavProps) => {
-  const [openForm, setOpenForm] = useState(false);
+const Navbar = ({ navItems, onNavItemClick, activeTab }: NavProps) => {
   const [mobileNav, setMobileNav] = useState(false);
-  
+
   const [isMdScreen, setIsMdScreen] = useState(false);
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
@@ -32,10 +27,6 @@ const Navbar = ({ navItems, onNavItemClick }: NavProps) => {
 
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
-  const handleOpenForm = () => {
-    setOpenForm(!openForm);
-    setMobileNav(false);
-  };
 
   const handleOpenMobileNav = () => {
     //isMdScreen && setMobileNav(true);
@@ -67,7 +58,11 @@ const Navbar = ({ navItems, onNavItemClick }: NavProps) => {
               <button
                 key={item.href}
                 onClick={() => onNavItemClick(item.label)}
-                className="text-foreground hover:text-primary transition-colors"
+                className={`hover-underline nav-item pb-[2px] ${
+                  activeTab === item.label
+                    ? "active font-bold text-[#00d083] text-primary"
+                    : ""
+                } text-foreground hover:text-[#00d083] transition-colors`}
               >
                 {item.label}
               </button>
@@ -77,56 +72,7 @@ const Navbar = ({ navItems, onNavItemClick }: NavProps) => {
             </p>
           </div>
         </div>
-        {openForm && (
-          <div className="fixed inset-0 z-50 overflow-y-auto bg-black bg-opacity-50 flex items-center justify-center">
-            <div className="animate__animated animate__fadeInDownBig  bg-white shadow-xl rounded-lg p-8 w-full max-w-md m-4 flex flex-col gap-4">
-              <div className="flex justify-end mb-4">
-                <button
-                  onClick={handleOpenForm}
-                  className="p-2 rounded-full bg-[#00D084] text-white hover:bg-opacity-80 transition-colors"
-                >
-                  <IoMdClose className="h-6 w-6" />
-                </button>
-              </div>
-              <form className="space-y-6 ">
-                <h2 className="text-2xl lg:text-4xl font-bold text-[#00D084] mb-4">
-                  Contact Us
-                </h2>
-                {formFields.map((field) => (
-                  <div key={field.id} className="flex flex-col">
-                    <label
-                      htmlFor={field.id}
-                      className="mb-1 font-medium text-blue-950 "
-                    >
-                      {field.label}
-                    </label>
-                    {field.type === "textarea" ? (
-                      <textarea
-                        id={field.id}
-                        name={field.id}
-                        rows={4}
-                        className="border rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#ef6a5bf5] bg-[#fcf0eff5]"
-                      />
-                    ) : (
-                      <input
-                        id={field.id}
-                        type={field.type}
-                        name={field.id}
-                        className="border rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#ef6a5bf5] bg-[#fcf0eff5]"
-                      />
-                    )}
-                  </div>
-                ))}
-                <button
-                  type="submit"
-                  className="w-full  bg-[#00D084] text-white py-2 rounded-md hover:border border-[#fcf0eff5] hover:bg-[#ffffff] hover:shadow-lg hover:text-[#ef6a5bf5]"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-        )}
+
         {mobileNav && isMdScreen && (
           <div className="animate__animated animate__slideInRight w-[45%] absolute z-50 top-4 right-0 bg-[#ffffff] shadow-lg pl-4 pb-4 rounded-lg">
             <div className={`flex justify-end`}>
@@ -137,17 +83,18 @@ const Navbar = ({ navItems, onNavItemClick }: NavProps) => {
             {navItems.map((item) => (
               <button
                 key={item.href}
-                className="text-[#00D084] hover:decoration hover:underline underline-offset-2 font-bold"
+                className={`nav-item ${
+                  activeTab === item.label
+                    ? "active font-bold text-primary"
+                    : ""
+                } text-[#00D084] hover:decoration hover:underline underline-offset-2 font-bold`}
               >
                 {item.label}
               </button>
             ))}
-            <button
-              onClick={handleOpenForm}
-              className="hover:decoration hover:underline underline-offset-2 px-4 py-3 font-bold  text-[#ef6a5bf5] "
-            >
-              Say Hello
-            </button>
+            <p className="hover:decoration hover:underline underline-offset-2 px-4 py-3 font-bold  text-[#ef6a5bf5] ">
+              Get Started
+            </p>
           </div>
         )}
       </nav>

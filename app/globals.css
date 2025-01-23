@@ -19,3 +19,29 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.nav-item::after {
+  
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* Initially no underline */
+  height: 2px;
+  background-color: #00d084; /* Match your theme color */
+  transition: width 0.3s ease; /* Smooth transition for underline */
+}
+
+.nav-item:hover::after {
+  width: 35%; /* On hover, underline is 1/4 of the text width */
+}
+
+.nav-item.active::after {
+  width: 100%; /* When active, underline spans full width */
+}
