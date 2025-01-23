@@ -10,6 +10,7 @@ interface NavItem {
 }
 interface NavProps {
   navItems: NavItem[];
+  onNavItemClick: (label: string) => void;
 }
 const formFields = [
   { id: "name", label: "Name", type: "text" },
@@ -17,9 +18,10 @@ const formFields = [
   { id: "message", label: "Message", type: "textarea" },
 ];
 
-const Navbar = ({ navItems }: NavProps) => {
+const Navbar = ({ navItems, onNavItemClick }: NavProps) => {
   const [openForm, setOpenForm] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
+  
   const [isMdScreen, setIsMdScreen] = useState(false);
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
@@ -62,13 +64,13 @@ const Navbar = ({ navItems }: NavProps) => {
 
           <div className="hidden lg:flex gap-6 items-center animate__animated animate__slideInRight">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.href}
-                href={item.href}
+                onClick={() => onNavItemClick(item.label)}
                 className="text-foreground hover:text-primary transition-colors"
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
             <p className="border px-4 py-3 rounded-lg font-bold bg-[#ffffff] border-[#00D084] hover:bg-[#00D084] text-[#00D084] hover:text-[#ffffff] transition-all duration-500 ease-in">
               Get Started
@@ -133,13 +135,12 @@ const Navbar = ({ navItems }: NavProps) => {
               </button>
             </div>
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.href}
-                href={item.href}
                 className="text-[#00D084] hover:decoration hover:underline underline-offset-2 font-bold"
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
             <button
               onClick={handleOpenForm}
