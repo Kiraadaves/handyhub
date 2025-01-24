@@ -16,27 +16,27 @@ const Contact = () => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-3xl font-bold text-primary">Contact Us</h2>{" "}
+      <h2 className=" font-bold text-primary">Contact Us</h2>{" "}
       <button
         onClick={handleOpenForm}
         className="hover:decoration hover:underline underline-offset-2 px-4 py-3 font-bold  text-[#ef6a5bf5] "
       >
         Get Started
       </button>
-      <p className="text-lg">
+      <p className="">
         Get in touch with us for any inquiries or to schedule a service.
       </p>
       <div className="space-y-4">
         <div>
-          <h3 className="text-xl font-semibold">Phone</h3>
+          <h3 className=" font-semibold">Phone</h3>
           <p>(123) 456-7890</p>
         </div>
         <div>
-          <h3 className="text-xl font-semibold">Email</h3>
+          <h3 className=" font-semibold">Email</h3>
           <p>info@handyhub.com</p>
         </div>
         <div>
-          <h3 className="text-xl font-semibold">Address</h3>
+          <h3 className=" font-semibold">Address</h3>
           <p>123 Main Street, Anytown, USA 12345</p>
         </div>
       </div>
@@ -52,7 +52,7 @@ const Contact = () => {
               </button>
             </div>
             <form className="space-y-6 ">
-              <p className="text-2xl text-center  font-bold text-[#00D084] mb-4">
+              <p className=" text-center  font-bold text-[#00D084] mb-4">
                 We&apos;d love to hear from you
               </p>
               {formFields.map((field) => (

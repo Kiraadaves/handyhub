@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useCallback, useEffect, useState } from "react";
 import { AiFillCheckCircle } from "react-icons/ai";
 import Services from "./Services";
+import How from "@/components/How";
 
 const listItems = [
   "Professional and reliable service",
@@ -42,15 +43,15 @@ export const HomeScreen = () => {
   return (
     <section className="flex flex-col gap-12">
       <div className=" space-y-6 ">
-        <h2 className="text-4xl  text-[#00D084] text-center font-extrabold text-primary">
+        <h1 className="  text-[#00D084] text-center font-extrabold text-primary">
           Welcome to HandyHub{" "}
-          <span className="text-3xl text-[#0a4a32] font-semibold">
+          <span className=" text-[#0a4a32] font-semibold">
             - Your one-stop solution for all your handyman needs.
           </span>
-        </h2>
+        </h1>
       </div>
       <div className=" px-8 py-6 flex flex-col lg:flex-row items-center">
-        <ul className="space-y-2 text-2xl  mb-6 lg:mb-0 lg:w-1/2">
+        <ul className="space-y-2   mb-6 lg:mb-0 lg:w-1/2">
           {listItems.map((items, index) => (
             <li
               key={index}
@@ -79,6 +80,7 @@ export const HomeScreen = () => {
         </div>
       </div>
       <Services />
+      <How />
     </section>
   );
 };
