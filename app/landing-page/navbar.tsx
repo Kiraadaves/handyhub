@@ -14,7 +14,7 @@ interface NavProps {
   activeTab: string;
 }
 
-const Navbar = ({ navItems, onNavItemClick, activeTab }: NavProps) => {
+const LandingNavbar = ({ navItems, onNavItemClick, activeTab }: NavProps) => {
   const [mobileNav, setMobileNav] = useState(false);
 
   const [isMdScreen, setIsMdScreen] = useState(false);
@@ -102,4 +102,4 @@ const Navbar = ({ navItems, onNavItemClick, activeTab }: NavProps) => {
   );
 };
 
-export default Navbar;
+export default LandingNavbar;
