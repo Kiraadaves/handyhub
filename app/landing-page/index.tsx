@@ -36,7 +36,7 @@ const LandingPage = () => {
         onNavItemClick={handleNavItemClick}
         activeTab={activeComponent}
       />
-      <main className=" flex flex-col gap-20">
+      <main className="w-[87%] mx-auto flex flex-col gap-20">
         {renderActiveComponent()}
       </main>
     </div>

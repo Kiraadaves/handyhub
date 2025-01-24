@@ -1,9 +1,47 @@
-import React from "react";
+"use client";
+import Image from "next/image";
+import React, { useCallback, useEffect, useState } from "react";
+import { AiFillCheckCircle } from "react-icons/ai";
+import Services from "./Services";
+
+const listItems = [
+  "Professional and reliable service",
+  "Wide range of home repair and maintenance solutions",
+  "Experienced and skilled technicians",
+  "Competitive pricing and transparent quotes",
+];
+
+const sliderImages = [
+  "/p1.jpg",
+  "/p2.jpg",
+  "/p3.jpg",
+  "/p4.jpg",
+  "/p5.jpg",
+  "/p6.jpg",
+  "/p7.jpg",
+];
 
 export const HomeScreen = () => {
+  const [activeImg, setActiveImg] = useState(0);
+
+  const clickNext = useCallback(() => {
+    setActiveImg((prevActiveImg) =>
+      prevActiveImg === sliderImages.length - 1 ? 0 : prevActiveImg + 1
+    );
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      clickNext();
+    }, 2000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [activeImg, clickNext]);
+
   return (
-    <div className="flex flex-col gap-6">
-      <div className="w-[87%] mx-auto space-y-6 ">
+    <section className="flex flex-col gap-12">
+      <div className=" space-y-6 ">
         <h2 className="text-4xl  text-[#00D084] text-center font-extrabold text-primary">
           Welcome to HandyHub{" "}
           <span className="text-3xl text-[#0a4a32] font-semibold">
@@ -11,14 +49,36 @@ export const HomeScreen = () => {
           </span>
         </h2>
       </div>
-      <div className="bg-[#00d084] px-8 py-6 flex flex-col lg:flex-row">
-        <ul className="list-disc list-inside space-y-2">
-          <li>Professional and reliable service</li>
-          <li>Wide range of home repair and maintenance solutions</li>
-          <li>Experienced and skilled technicians</li>
-          <li>Competitive pricing and transparent quotes</li>
+      <div className=" px-8 py-6 flex flex-col lg:flex-row items-center">
+        <ul className="space-y-2 text-2xl  mb-6 lg:mb-0 lg:w-1/2">
+          {listItems.map((items, index) => (
+            <li
+              key={index}
+              className="text-[#0a4a32] flex items-baseline gap-2"
+            >
+              <span className="text-[#00d084]">
+                <AiFillCheckCircle className="w-5 h-5" />
+              </span>{" "}
+              {items}
+            </li>
+          ))}
         </ul>
+        <div className="relative w-full lg:w-1/2 aspect-video">
+          {sliderImages.map((img, index) => (
+            <Image
+              key={index}
+              src={img}
+              alt={img}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className={`object-cover rounded-lg transition-opacity duration-500 ${
+                index === activeImg ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+      <Services />
+    </section>
   );
 };
