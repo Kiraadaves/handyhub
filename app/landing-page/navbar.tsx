@@ -38,7 +38,7 @@ const LandingNavbar = ({ navItems, onNavItemClick, activeTab }: NavProps) => {
 
   return (
     <div className="shadow-md">
-      <nav className="w-[90%] mx-auto relative">
+      <nav className="px-8 relative">
         <div className="flex  justify-between py-4 items-center">
           <div>
             <h1 className="animate__animated animate__slideInLeft  text-[1.5rem] border rounded-full p-2 shadow-lg text-[#ffffff] bg-[#00D084] font-bold">
@@ -68,7 +68,7 @@ const LandingNavbar = ({ navItems, onNavItemClick, activeTab }: NavProps) => {
               </button>
             ))}
             <button className="border px-4 py-3 rounded-lg font-bold bg-[#ffffff] border-[#00D084] hover:bg-[#00D084] text-[#00D084] hover:text-[#ffffff] transition-all duration-500 ease-in">
-              Logout
+              Get Started
             </button>
           </div>
         </div>
@@ -93,7 +93,7 @@ const LandingNavbar = ({ navItems, onNavItemClick, activeTab }: NavProps) => {
               </button>
             ))}
             <button className="hover:decoration hover:underline underline-offset-2 px-4 py-3 font-bold  text-[#ef6a5bf5] ">
-              Logout
+              Get Started
             </button>
           </div>
         )}

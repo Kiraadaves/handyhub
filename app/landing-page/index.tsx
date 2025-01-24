@@ -1,29 +1,26 @@
 "use client";
 
 import About from "@/pages/About";
-import Contact from "@/pages/Contact";
+//import Contact from "@/pages/Contact";
 import { HomeScreen } from "@/pages/HomeScreen";
-import Services from "@/pages/Services";
+//import Services from "@/pages/Services";
 import { useState } from "react";
 import LandingNavbar from "./navbar";
 
 const navItems = [
+  { label: "Welcome", href: "/welcome" },
   { label: "About", href: "/about" },
-  { label: "Get Started", href: "/servicess" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 const LandingPage = () => {
   const [activeComponent, setActiveComponent] = useState("Home");
   const renderActiveComponent = () => {
     switch (activeComponent) {
-      case "Home":
+      case "Welcome":
         return <HomeScreen />;
       case "About":
         return <About />;
-      case "Services":
-        return <Services />;
-      case "Contact":
-        return <Contact />;
       default:
         return <HomeScreen />;
     }
@@ -39,7 +36,7 @@ const LandingPage = () => {
         onNavItemClick={handleNavItemClick}
         activeTab={activeComponent}
       />
-      <main className="w-[87%] mx-auto flex flex-col gap-20">
+      <main className=" flex flex-col gap-20">
         {renderActiveComponent()}
       </main>
     </div>
