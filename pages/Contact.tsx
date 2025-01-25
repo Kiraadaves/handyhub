@@ -48,7 +48,7 @@ const Contact = () => {
                 onClick={handleOpenForm}
                 className="p-2 rounded-full bg-[#00D084] text-white hover:bg-opacity-80 transition-colors"
               >
-                <IoMdClose className="h-6 w-6" />
+                <IoMdClose className="h-12 w-12" />
               </button>
             </div>
             <form className="space-y-6 ">

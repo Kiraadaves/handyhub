@@ -4,6 +4,8 @@ import React, { useCallback, useEffect, useState } from "react";
 import { AiFillCheckCircle } from "react-icons/ai";
 import Services from "./Services";
 import How from "@/components/How";
+import WhyChooseUs from "@/components/WhyChooseUS";
+import Testimonials from "@/components/Testimonials";
 
 const listItems = [
   "Professional and reliable service",
@@ -41,7 +43,7 @@ export const HomeScreen = () => {
   }, [activeImg, clickNext]);
 
   return (
-    <section className="flex flex-col gap-12">
+    <section className="flex flex-col gap-20">
       <div className=" space-y-6 ">
         <h1 className="  text-[#00D084] text-center font-extrabold text-primary">
           Welcome to HandyHub{" "}
@@ -81,6 +83,8 @@ export const HomeScreen = () => {
       </div>
       <Services />
       <How />
+      <WhyChooseUs />
+      <Testimonials />
     </section>
   );
 };
