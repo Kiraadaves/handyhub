@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const testimonials = [
@@ -37,15 +37,24 @@ const testimonials = [
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextTestimonial = () => {
+  const nextTestimonial = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
+  }, []);
 
   const prevTestimonial = () => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
     );
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      nextTestimonial();
+    }, 4000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [currentIndex, nextTestimonial]);
 
   return (
     <section className="py-16 bg-white">

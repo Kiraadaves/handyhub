@@ -31,8 +31,8 @@ const reasons = [
 const WhyChooseUs = () => {
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 space-y-6">
+      <div className="container mx-auto px-4 space-y-20 ">
+        <div className="text-center mb-12 space-y-10">
           <h2 className="text-3xl font-extrabold text-[#00d084] mb-4">
             Why Choose HandyHub
           </h2>

@@ -56,7 +56,7 @@ const servicesData = [
 const Services = () => {
   return (
     <section className="space-y-16">
-      <div className="space-y-6">
+      <div className="space-y-10">
         <h2 className="  font-extrabold text-center text-[#00d084]">
           Our Services
         </h2>

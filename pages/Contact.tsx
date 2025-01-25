@@ -15,7 +15,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-10">
       <h2 className=" font-bold text-primary">Contact Us</h2>{" "}
       <button
         onClick={handleOpenForm}
@@ -48,10 +48,10 @@ const Contact = () => {
                 onClick={handleOpenForm}
                 className="p-2 rounded-full bg-[#00D084] text-white hover:bg-opacity-80 transition-colors"
               >
-                <IoMdClose className="h-12 w-12" />
+                <IoMdClose className="text-4xl" />
               </button>
             </div>
-            <form className="space-y-6 ">
+            <form className="space-y-10 ">
               <p className=" text-center  font-bold text-[#00D084] mb-4">
                 We&apos;d love to hear from you
               </p>

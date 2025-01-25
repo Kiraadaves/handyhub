@@ -44,7 +44,7 @@ export const HomeScreen = () => {
 
   return (
     <section className="flex flex-col gap-20">
-      <div className=" space-y-6 ">
+      <div className=" space-y-10 ">
         <h1 className="  text-[#00D084] text-center font-extrabold text-primary">
           Welcome to HandyHub{" "}
           <span className=" text-[#0a4a32] font-semibold">

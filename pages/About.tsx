@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-10">
       <h2 className=" font-bold text-primary">About Us</h2>
       <p className="">
         HandyHub is your trusted partner for all home repair and maintenance

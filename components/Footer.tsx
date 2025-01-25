@@ -15,7 +15,7 @@ const Footer = () => {
         <h1 className="bg-[#ffffff] inline-block text-[1.5rem] border rounded-full p-2 shadow-md text-[#00D084] font-bold">
           HandyHub
         </h1>
-        <p className="mt-2 text-sm">
+        <p className="mt-2 text-base">
           Your trusted partner for all home repair and maintenance needs.
         </p>
       </div>
