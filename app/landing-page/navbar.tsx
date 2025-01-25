@@ -58,18 +58,21 @@ const LandingNavbar = ({ navItems, onNavItemClick, activeTab }: NavProps) => {
               <button
                 key={item.href}
                 onClick={() => onNavItemClick(item.label)}
-                className={`hover-underline nav-item pb-[2px] ${
+                className={`${
+                  item.label === "Get Started"
+                    ? "border px-4 py-3 rounded-lg font-bold bg-[#ffffff] border-[#00D084] hover:bg-[#00D084] text-[#00D084] hover:text-[#ffffff] transition-all duration-500 ease-in"
+                    : "hover-underline nav-item pb-[2px]"
+                } ${
                   activeTab === item.label
-                    ? "active font-bold text-[#00d083] text-primary"
+                    ? item.label === "Get Started"
+                      ? "active:bg-[#00D084] active:text-[#ffffff] focus:bg-[#00D084] focus:text-[#ffffff]"
+                      : "active font-bold text-[#00d083]"
                     : ""
-                } text-foreground hover:text-[#00d083] transition-colors`}
+                }`}
               >
                 {item.label}
               </button>
             ))}
-            <button className="border px-4 py-3 rounded-lg font-bold bg-[#ffffff] border-[#00D084] hover:bg-[#00D084] text-[#00D084] hover:text-[#ffffff] transition-all duration-500 ease-in">
-              Get Started
-            </button>
           </div>
         </div>
 
@@ -83,11 +86,17 @@ const LandingNavbar = ({ navItems, onNavItemClick, activeTab }: NavProps) => {
             {navItems.map((item) => (
               <button
                 key={item.href}
-                className={`nav-item ${
+                className={`${
+                  item.label === "Get Started"
+                    ? "border px-4 py-3 rounded-lg font-bold bg-[#ffffff] border-[#00D084] hover:bg-[#00D084] text-[#00D084] hover:text-[#ffffff] transition-all duration-500 ease-in"
+                    : "hover-underline nav-item pb-[2px]"
+                } ${
                   activeTab === item.label
-                    ? "active font-bold text-primary"
+                    ? item.label === "Get Started"
+                      ? "bg-[#00D084] text-[#ffffff]"
+                      : "active font-bold text-[#00d083]"
                     : ""
-                } text-[#00D084] hover:decoration hover:underline underline-offset-2 font-bold`}
+                }`}
               >
                 {item.label}
               </button>

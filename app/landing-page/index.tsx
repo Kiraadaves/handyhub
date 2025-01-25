@@ -6,11 +6,13 @@ import { HomeScreen } from "@/pages/HomeScreen";
 //import Services from "@/pages/Services";
 import { useState } from "react";
 import LandingNavbar from "./navbar";
+import GetStartedPage from "@/pages/GetStarted";
 
 const navItems = [
   { label: "Welcome", href: "/welcome" },
   { label: "About", href: "/about" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Get Started", href: "/get-started" },
 ];
 
 const LandingPage = () => {
@@ -21,6 +23,8 @@ const LandingPage = () => {
         return <HomeScreen />;
       case "About":
         return <About />;
+      case "Get Started":
+        return <GetStartedPage />;
       default:
         return <HomeScreen />;
     }
