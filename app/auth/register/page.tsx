@@ -1,10 +1,10 @@
 import React from "react";
-import Register from "./register";
+import UserRegisterPage from "./register";
 
 const page = () => {
   return (
     <div>
-      <Register />
+      <UserRegisterPage />
     </div>
   );
 };

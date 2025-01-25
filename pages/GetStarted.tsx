@@ -18,7 +18,7 @@ const GetStartedPage = () => {
         <div className="bg-white py-8 px-4 shadow-lg border sm:rounded-lg sm:px-10">
           <div className="space-y-6">
             <Link
-              href="/login"
+              href="/auth/login"
               className="w-full flex justify-center items-center px-4 py-4 border border-transparent rounded-md shadow-sm text-base font-bold text-white bg-[#00d084] hover:bg-[#00b873] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00d084] transition-colors duration-300"
             >
               <FaSignInAlt className="mr-3 text-2xl" />
@@ -26,7 +26,7 @@ const GetStartedPage = () => {
             </Link>
 
             <Link
-              href="/register-provider"
+              href="/auth/register-provider"
               className="w-full flex justify-center items-center px-4 py-4 border border-[#00d084] rounded-md shadow-sm text-base font-bold text-[#00d084] bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00d084] transition-colors duration-300"
             >
               <FaToolbox className="mr-3 text-2xl" />
@@ -34,7 +34,7 @@ const GetStartedPage = () => {
             </Link>
 
             <Link
-              href="/register"
+              href="/auth/register"
               className="w-full flex justify-center items-center px-4 py-4 border border-[#00d084] rounded-md shadow-sm text-base font-bold text-[#00d084] bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00d084] transition-colors duration-300"
             >
               <FaUserPlus className="mr-3 text-2xl" />

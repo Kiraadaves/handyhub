@@ -16,7 +16,6 @@ interface NavProps {
 
 const LandingNavbar = ({ navItems, onNavItemClick, activeTab }: NavProps) => {
   const [mobileNav, setMobileNav] = useState(false);
-
   const [isMdScreen, setIsMdScreen] = useState(false);
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");

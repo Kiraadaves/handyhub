@@ -1,10 +1,10 @@
 import React from "react";
-import RegisterProvider from "./register-provider";
+import ProviderRegisterPage from "./register-provider";
 
 const page = () => {
   return (
     <div>
-      <RegisterProvider />
+      <ProviderRegisterPage />
     </div>
   );
 };
