@@ -3,13 +3,7 @@
 import type React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import {
-  FaUser,
-  FaEnvelope,
-  FaLock,
-  FaToolbox,
-  FaUserTie,
-} from "react-icons/fa";
+import { FaUser, FaEnvelope, FaLock, FaToolbox } from "react-icons/fa";
 
 const ProviderRegisterPage = () => {
   const [name, setName] = useState("");
@@ -32,15 +26,15 @@ const ProviderRegisterPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-[#0a4a32]">
+      <div className="sm:mx-auto sm:w-full sm:max-w-2xl">
+        <h2 className="mt-6 text-center font-extrabold text-[#00d084]">
           Register as a Service Provider
         </h2>
       </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form className="space-y-6" onSubmit={handleSubmit}>
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-lg">
+        <div className="bg-white border-2 py-8 px-4 shadow-lg sm:rounded-lg sm:px-10">
+          <form className="space-y-10" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="name"
@@ -48,9 +42,9 @@ const ProviderRegisterPage = () => {
               >
                 Full Name
               </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
+              <div className="mt-2 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaUser className="h-5 w-5 text-gray-400" />
+                  <FaUser className="h-4 w-4 text-gray-400" />
                 </div>
                 <input
                   id="name"
@@ -58,7 +52,7 @@ const ProviderRegisterPage = () => {
                   type="text"
                   autoComplete="name"
                   required
-                  className="focus:ring-[#00d084] focus:border-[#00d084] block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
+                  className="focus:ring-[#00d084] focus:border-[#00d084] outline-none py-3 border block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                   placeholder="John Doe"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -73,9 +67,9 @@ const ProviderRegisterPage = () => {
               >
                 Email address
               </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
+              <div className="mt-2 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaEnvelope className="h-5 w-5 text-gray-400" />
+                  <FaEnvelope className="h-4 w-4 text-gray-400" />
                 </div>
                 <input
                   id="email"
@@ -83,7 +77,7 @@ const ProviderRegisterPage = () => {
                   type="email"
                   autoComplete="email"
                   required
-                  className="focus:ring-[#00d084] focus:border-[#00d084] block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
+                  className="focus:ring-[#00d084] focus:border-[#00d084] outline-none border py-3 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -98,9 +92,9 @@ const ProviderRegisterPage = () => {
               >
                 Password
               </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
+              <div className="mt-2 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaLock className="h-5 w-5 text-gray-400" />
+                  <FaLock className="h-4 w-4 text-gray-400" />
                 </div>
                 <input
                   id="password"
@@ -108,7 +102,7 @@ const ProviderRegisterPage = () => {
                   type="password"
                   autoComplete="new-password"
                   required
-                  className="focus:ring-[#00d084] focus:border-[#00d084] block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
+                  className="focus:ring-[#00d084] focus:border-[#00d084] outline-none border py-3 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -123,9 +117,9 @@ const ProviderRegisterPage = () => {
               >
                 Confirm Password
               </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
+              <div className="mt-2 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaLock className="h-5 w-5 text-gray-400" />
+                  <FaLock className="h-4 w-4 text-gray-400" />
                 </div>
                 <input
                   id="confirm-password"
@@ -133,14 +127,32 @@ const ProviderRegisterPage = () => {
                   type="password"
                   autoComplete="new-password"
                   required
-                  className="focus:ring-[#00d084] focus:border-[#00d084] block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
+                  className="focus:ring-[#00d084] focus:border-[#00d084] outline-none border py-3 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                   placeholder="••••••••"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </div>
             </div>
-
+            <div className="space-y-1">
+              <Link href={"#"} className="text-sm text-[#00d084]">
+                Terms and conditions
+              </Link>
+              <div className="flex items-center">
+                <input
+                  id="remember-me"
+                  name="remember-me"
+                  type="checkbox"
+                  className="accent-[#1cb37b] h-4 w-4 border-gray-300 rounded"
+                />
+                <label
+                  htmlFor="remember-me"
+                  className="ml-2 block text-sm text-gray-900"
+                >
+                  I agree to the terms and conditions
+                </label>
+              </div>
+            </div>
             <div>
               <label
                 htmlFor="service-type"
@@ -148,15 +160,15 @@ const ProviderRegisterPage = () => {
               >
                 Service Type
               </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
+              <div className="mt-2 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaToolbox className="h-5 w-5 text-gray-400" />
+                  <FaToolbox className="h-4 w-4 text-gray-400" />
                 </div>
                 <select
                   id="service-type"
                   name="service-type"
                   required
-                  className="focus:ring-[#00d084] focus:border-[#00d084] block w-full pl-10 pr-12 sm:text-sm border-gray-300 rounded-md"
+                  className="focus:ring-[#00d084] focus:border-[#00d084] outline-none border py-3 block w-full pl-10 pr-12 sm:text-sm border-gray-300 rounded-md"
                   value={serviceType}
                   onChange={(e) => setServiceType(e.target.value)}
                 >
@@ -175,7 +187,6 @@ const ProviderRegisterPage = () => {
                 type="submit"
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#00d084] hover:bg-[#00b873] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00d084]"
               >
-                <FaUserTie className="mr-2 h-5 w-5" />
                 Register as Provider
               </button>
             </div>

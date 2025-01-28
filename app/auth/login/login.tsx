@@ -3,7 +3,9 @@
 import type React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import { FaEnvelope, FaLock, FaSignInAlt } from "react-icons/fa";
+import { FaEnvelope, FaLock } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa6";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -16,26 +18,26 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen text-[#00d084] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen  flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-lg">
-        <h2 className="mt-6 text-center text-3xl font-extrabold ">
+        <h2 className="mt-6 text-center text-[#00d084] font-extrabold ">
           Sign in to your account
         </h2>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow-lg border sm:rounded-lg sm:px-10">
-          <form className="space-y-6" onSubmit={handleSubmit}>
+        <div className="bg-white py-8 px-4 shadow-lg border-2 sm:rounded-lg sm:px-10">
+          <form className="space-y-10" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block font-medium text-gray-700"
               >
                 Email address
               </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
+              <div className="mt-2 relative rounded-md  shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaEnvelope className="h-5 w-5 text-gray-400" />
+                  <FaEnvelope className="h-4 w-4 text-gray-400" />
                 </div>
                 <input
                   id="email"
@@ -43,7 +45,7 @@ const Login = () => {
                   type="email"
                   autoComplete="email"
                   required
-                  className="focus:ring-[#00d084] focus:border-[#00d084] block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
+                  className="focus:ring-[#00d084] focus:border-[#00d084] outline-none border block w-full pl-10 py-3 sm:text-sm border-gray-300 rounded-md bg-white"
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -54,13 +56,13 @@ const Login = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block font-medium text-gray-700"
               >
                 Password
               </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
+              <div className="mt-2 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaLock className="h-5 w-5 text-gray-400" />
+                  <FaLock className="h-4 w-4 text-gray-400" />
                 </div>
                 <input
                   id="password"
@@ -68,7 +70,7 @@ const Login = () => {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="focus:ring-[#00d084] focus:border-[#00d084] block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
+                  className="focus:ring-[#00d084] focus:border-[#00d084] outline-none border py-3 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -82,7 +84,7 @@ const Login = () => {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 text-[#00d084] focus:ring-[#00d084] border-gray-300 rounded"
+                  className="accent-[#1cb37b] h-4 w-4 border-gray-300 rounded"
                 />
                 <label
                   htmlFor="remember-me"
@@ -105,9 +107,8 @@ const Login = () => {
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#00d084] hover:bg-[#00b873] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00d084]"
+                className="w-full font-bold flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm text-white bg-[#00d084] hover:bg-[#00b873] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00d084]"
               >
-                <FaSignInAlt className="mr-2 h-5 w-5" />
                 Sign in
               </button>
             </div>
@@ -120,7 +121,7 @@ const Login = () => {
               </div>
               <div className="relative flex justify-center">
                 <span className="px-2 text-sm bg-white text-gray-500">
-                  Or continue with
+                  or continue with
                 </span>
               </div>
             </div>
@@ -132,14 +133,7 @@ const Login = () => {
                   className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
                 >
                   <span className="sr-only">Sign in with Google</span>
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" />
-                  </svg>
+                  <FcGoogle className="text-xl" />
                 </a>
               </div>
 
@@ -149,18 +143,7 @@ const Login = () => {
                   className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
                 >
                   <span className="sr-only">Sign in with Facebook</span>
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                  <FaFacebook className="text-xl text-[#5f57ec]" />
                 </a>
               </div>
             </div>
@@ -169,7 +152,7 @@ const Login = () => {
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <p className="text-center text-sm text-gray-600">
+        <p className="text-center text-gray-600">
           Don&apos;t have an account?{" "}
           <Link
             href="/register"

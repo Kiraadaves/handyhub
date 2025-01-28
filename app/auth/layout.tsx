@@ -8,7 +8,7 @@ export default function Back({ children }: { children: React.ReactNode }) {
         <nav className="w-[90%] mx-auto relative">
           <div className="flex  justify-between py-4 items-center">
             <div>
-              <h1 className="animate__animated animate__slideInLeft  text-[1.5rem] border rounded-full p-2 shadow-lg text-[#ffffff] bg-[#00D084] font-bold">
+              <h1 className="animate__animated animate__slideInLeft  text-[1.5rem] border rounded-full p-4 shadow-lg text-[#ffffff] bg-[#00D084] font-bold">
                 <Link href={"/"}>HandyHub</Link>
               </h1>
             </div>
