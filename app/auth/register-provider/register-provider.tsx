@@ -1,34 +1,51 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import Link from "next/link"
-import { FaUser, FaEnvelope, FaLock, FaToolbox, FaUserTie } from "react-icons/fa"
+import type React from "react";
+import { useState } from "react";
+import Link from "next/link";
+import {
+  FaUser,
+  FaEnvelope,
+  FaLock,
+  FaToolbox,
+  FaUserTie,
+} from "react-icons/fa";
 
 const ProviderRegisterPage = () => {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [confirmPassword, setConfirmPassword] = useState("")
-  const [serviceType, setServiceType] = useState("")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [serviceType, setServiceType] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle service provider registration logic here
-    console.log("Provider registration attempt with:", name, email, password, serviceType)
-  }
+    console.log(
+      "Provider registration attempt with:",
+      name,
+      email,
+      password,
+      serviceType
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-[#0a4a32]">Register as a Service Provider</h2>
+        <h2 className="mt-6 text-center text-3xl font-extrabold text-[#0a4a32]">
+          Register as a Service Provider
+        </h2>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Full Name
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
@@ -50,7 +67,10 @@ const ProviderRegisterPage = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email address
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
@@ -72,7 +92,10 @@ const ProviderRegisterPage = () => {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Password
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
@@ -94,7 +117,10 @@ const ProviderRegisterPage = () => {
             </div>
 
             <div>
-              <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="confirm-password"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Confirm Password
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
@@ -116,7 +142,10 @@ const ProviderRegisterPage = () => {
             </div>
 
             <div>
-              <label htmlFor="service-type" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="service-type"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Service Type
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
@@ -157,14 +186,16 @@ const ProviderRegisterPage = () => {
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <p className="text-center text-sm text-gray-600">
           Already have an account?{" "}
-          <Link href="/login" className="font-medium text-[#00d084] hover:text-[#00b873]">
+          <Link
+            href="/login"
+            className="font-medium text-[#00d084] hover:text-[#00b873]"
+          >
             Sign in
           </Link>
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProviderRegisterPage
-
+export default ProviderRegisterPage;

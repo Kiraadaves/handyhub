@@ -3,7 +3,7 @@ import { IoArrowBackOutline } from "react-icons/io5";
 
 export default function Back({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen ">
       <div className="shadow-md">
         <nav className="w-[90%] mx-auto relative">
           <div className="flex  justify-between py-4 items-center">

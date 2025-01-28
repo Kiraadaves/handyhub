@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         <div className="flex flex-col min-h-screen">
           <div className="flex-grow">{children}</div>
-          <footer className=" w-full mt-20">
+          <footer className=" w-full">
             <Footer />
           </footer>
         </div>
