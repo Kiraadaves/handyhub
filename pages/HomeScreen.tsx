@@ -43,7 +43,7 @@ export const HomeScreen = () => {
   }, [activeImg, clickNext]);
 
   return (
-    <section className="flex flex-col gap-20">
+    <section className="flex flex-col gap-20 ">
       <div className=" space-y-10 ">
         <h1 className="  text-[#00D084] text-center font-extrabold text-primary">
           Welcome to HandyHub{" "}

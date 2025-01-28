@@ -34,7 +34,7 @@ const LandingPage = () => {
     setActiveComponent(label);
   };
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-16 bg-[url(/background.svg)]">
       <LandingNavbar
         navItems={navItems}
         onNavItemClick={handleNavItemClick}
