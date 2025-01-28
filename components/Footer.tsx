@@ -10,9 +10,9 @@ import {
 
 const Footer = () => {
   return (
-    <div className="bg-[#00D084] text-[#ffffff] px-8 py-12 flex flex-col md:flex-row flex-wrap justify-between">
+    <div className="bg-[#222222e4] text-[#ffffff] px-8 py-12 flex flex-col md:flex-row flex-wrap justify-between">
       <div>
-        <h1 className="bg-[#ffffff] inline-block text-[1.5rem] border rounded-full p-2 shadow-md text-[#00D084] font-bold">
+        <h1 className="bg-[#ffffff] inline-block text-[1.5rem] border rounded-full p-4 shadow-md text-[#00D084] font-bold">
           HandyHub
         </h1>
         <p className="mt-2 text-base">
